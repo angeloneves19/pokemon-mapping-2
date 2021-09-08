@@ -16,6 +16,7 @@ anteriormente no exercicio `pokemonObject`
 
 ```javascript
 const pokemon = {
+  id: Number,
   name: String,
   types: Array, // Array de string
   abilities: Array, // Array de string
@@ -41,6 +42,7 @@ Um breve `spoiler`, esse é o retorno esperado no final do exercicio:
 ```bash
 [
   {
+    id: 4,
     name: 'charmander',
     types: [ 'fire' ],
     abilities: [ 'blaze', 'solar-power' ],
