@@ -45,7 +45,7 @@ Um breve `spoiler`, esse é o retorno esperado no final do exercicio:
 ```bash
 [
   {
-    id: 4,
+id: 4,
     name: 'charmander',
     types: [ 'fire' ],
     abilities: [ 'blaze', 'solar-power' ],
@@ -64,7 +64,7 @@ Um breve `spoiler`, esse é o retorno esperado no final do exercicio:
       { name: 'ember', lv: 9 },
       { name: 'flamethrower', lv: 38 },
       { name: 'fire-spin', lv: 46 },
-      { name: 'rage', lv: 22 },
+      { name: 'rage', lv: 22 },    
       { name: 'slash', lv: 30 }
     ]
   }
