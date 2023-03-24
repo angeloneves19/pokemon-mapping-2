@@ -2,11 +2,10 @@ const pkm = require("./api")
 
 
 const pokemon2 = (status) => {
-
-return {
+return { 
     id: status[0].id,
     name: status[0].name,
-    types: status[0].types[1], // Array de string
+    types: status[0].types[0].type.name, // Array de string
     abilities: Array, // Array de string
     attributes: {
         hp: Number,
@@ -24,5 +23,7 @@ return {
     ]
     }
 }
- console.log(pokemon2(pkm))
+ //console.log(pokemon2(pkm))
 
+
+console.log(pkm.filter(nome => nome.moves.nome))
