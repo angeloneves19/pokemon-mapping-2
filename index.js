@@ -1,5 +1,25 @@
 const pkm = require("./api")
-const organizandoPokemon = (pokemon) => {
-    return pokemon.map(movies => movies.stats[0])
+
+const pokemon2 = (status) => {
+return {
+    id: Number,
+    name: String,
+    types: Array, // Array de string
+    abilities: Array, // Array de string
+    attributes: {
+        hp: Number,
+        attack: Number,
+        specialAttack: Number,
+        defense: Number,
+        specialDefense: Number,
+        speed: Number
+    },
+    moves: [
+        {
+        name: String,
+        lv: Number
+        }
+    ]
+    }
 }
-console.log(organizandoPokemon(pkm))
+ console.log(pokemon2())
