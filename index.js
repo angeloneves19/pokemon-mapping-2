@@ -1,5 +1,11 @@
 const pkm = require("./api")
 
+const moves = () =>{
+return pkm.filter(test => test.moves[0].version_group_details[0].version_group.name === 'red-blue')
+}
+console.log(moves())
+
+
 const pokemon2 = (status) => {
   const id = status.map(identificacao => identificacao.id)
   const nome = status.map(nome => nome.name)
@@ -11,8 +17,6 @@ const pokemon2 = (status) => {
     const resultadoFinalDoAtributo = pkm.map(atributos => atributos.stats[indexDoAtributo].base_stat).slice(1).pop()
     return resultadoFinalDoAtributo
 }
-
-
 return { 
     id: id[0] ,
     name: nome[0],
@@ -34,7 +38,7 @@ return {
     ]
     }
 }
-console.log(pokemon2(pkm))
+// console.log(pokemon2(pkm))
 
 
 //const test1 = pkm.map(ab => ab.abilities[0].ability.name).slice(1)
