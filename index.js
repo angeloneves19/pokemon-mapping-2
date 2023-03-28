@@ -1,25 +1,30 @@
 const pkm = require("./api")
 
-const mapeandoDados = (status) => {
-}
-mapeandoDados(pkm)
-
 const pokemon2 = (status) => {
   const id = status.map(identificacao => identificacao.id)
   const nome = status.map(nome => nome.name)
-  const type = status.map(types => types.type.name)
+  const type = status.map((tipo) => tipo.types[0].type.name).slice(1)
+  const blaze = status.map(ab => ab.abilities[0].ability.name).slice(1)
+  const solar = status.map(ab => ab.abilities[1].ability.name).slice(1)
+  const abilitie = blaze.concat(solar)
+  const atributos = (indexDoAtributo) => {
+    const resultadoFinalDoAtributo = pkm.map(atributos => atributos.stats[indexDoAtributo].base_stat).slice(1).pop()
+    return resultadoFinalDoAtributo
+}
+
+
 return { 
     id: id[0] ,
     name: nome[0],
-    types: '', // Array de string
-    abilities: Array, // Array de string
+    types: type, // Array de string
+    abilities: abilitie, // Array de string
     attributes: {
-        hp: Number,
-        attack: Number,
-        specialAttack: Number,
-        defense: Number,
-        specialDefense: Number,
-        speed: Number
+        hp: atributos(0),
+        attack: atributos(1),
+        specialAttack: atributos(3),
+        defense: atributos(2),
+        specialDefense: atributos(4),
+        speed: atributos(5)
     },
     moves: [
         {
@@ -29,7 +34,10 @@ return {
     ]
     }
 }
-//  console.log(pokemon2(pkm))
- const tipo = pkm.map((tipo) => tipo.types[0].type)
- console.log(tipo.map(nome => nome.name))
-  
+console.log(pokemon2(pkm))
+
+
+//const test1 = pkm.map(ab => ab.abilities[0].ability.name).slice(1)
+//const test2 = pkm.map(ab => ab.abilities[1].ability.name).slice(1)
+//console.log(test1.concat(test2))
+//const test = tipo.map(nome => nome.name)
