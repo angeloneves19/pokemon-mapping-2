@@ -30,8 +30,6 @@ return {
     }
 }
 //  console.log(pokemon2(pkm))
-// console.log(pkm.map((tipo) => tipo.types[0].type.name))
-const pokemonType = tipos => {
-    return tipos.map(tipo => tipo.type.name)
-}
-console.log(pokemonType(pkm.types))
+ const tipo = pkm.map((tipo) => tipo.types[0].type)
+ console.log(tipo.map(nome => nome.name))
+  
