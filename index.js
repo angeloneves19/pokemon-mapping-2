@@ -13,18 +13,13 @@ const pokemon2 = (status) => {
       .slice(1)
       .pop();
     return resultadoFinalDoAtributo;
-  }
+  };
 
-//   const filtragemMovies = status.filter(
-//     (filtro) =>
-//       filtro.moves[0].version_group_details[0].version_group.name ===
-//         "red-blue" 
-//   )
-
-    const filtragemComFind = s => {
-
-    }
-
+  //   const filtragemMovies = status.filter(
+  //     (filtro) =>
+  //       filtro.moves[0].version_group_details[0].version_group.name ===
+  //         "red-blue"
+  //   )
 
   const nameMoves = (indexNome) => {
     const nome = filtragemMovies
@@ -44,7 +39,7 @@ const pokemon2 = (status) => {
       .pop();
     return numero;
   };
-  
+
   return {
     id: id[0],
     name: nome[0],
@@ -58,19 +53,25 @@ const pokemon2 = (status) => {
       specialDefense: atributos(4),
       speed: atributos(5),
     },
-    moves: [
-      { name: nameMoves(3),
-        lv:  levelMovies(3)},
-    ]
-  }
+    moves: [{ name: nameMoves(3), lv: levelMovies(3) }],
   };
+};
 
-console.log(pokemon2(pkm));
+//console.log(pokemon2(pkm));
+//name
+const nick = pkm.map(a => a.moves.find(b => b.move.name == "growl"))
+console.log(nick.map(nome => nome.move.name).slice(1))
+
+
+//level
+const nome = pkm.map((a) => a.moves.find((b) => b.move.name == "growl"));
+const test = nome.map(lv => lv .version_group_details.find(c => c.version_group.name == "red-blue"))
+console.log(test.map(a => a.level_learned_at).slice(1).pop())
 
 // const moves = () => {
- // const nome = filtragemMovies.map((filtroName) => filtroName.moves[3].move.name).slice(1).pop();
-  // console.log(filtroName)
-  //return nome;
+// const nome = filtragemMovies.map((filtroName) => filtroName.moves[3].move.name).slice(1).pop();
+// console.log(filtroName)
+//return nome;
 //};
 
 // const moves24 = () => {
@@ -83,13 +84,9 @@ console.log(pokemon2(pkm));
 
 //console.log(moves())
 
-//const nome = pkm.map((a) => a.moves.find((b) => b.move.name == "scratch"));
-//const test = nome.map((c) =>
- // c.version_group_details.map((a) => a.level_learned_at)
-//);
-//console.log(test)
+//console.log(nome.map((c) => c.version_group_details.map((a) => a.level_learned_at)))
 
 //const test1 = pkm.map(ab => ab.abilities[0].ability.name).slice(1)
 //const test2 = pkm.map(ab => ab.abilities[1].ability.name).slice(1)
 //console.log(test1.concat(test2))
-//const test = tipo.map(nome => nome.name)
+//const test = tipo.map(nome => nome.name);
