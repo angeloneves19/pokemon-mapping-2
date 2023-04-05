@@ -13,13 +13,19 @@ const pokemon2 = (status) => {
       .slice(1)
       .pop();
     return resultadoFinalDoAtributo;
-  };
+  }
 
-  const filtragemMovies = status.filter(
-    (filtro) =>
-      filtro.moves[0].version_group_details[0].version_group.name ===
-        "red-blue" 
-  );
+//   const filtragemMovies = status.filter(
+//     (filtro) =>
+//       filtro.moves[0].version_group_details[0].version_group.name ===
+//         "red-blue" 
+//   )
+
+    const filtragemComFind = s => {
+
+    }
+
+
   const nameMoves = (indexNome) => {
     const nome = filtragemMovies
       .map((filtro) => filtro.moves[indexNome].move.name)
@@ -53,10 +59,10 @@ const pokemon2 = (status) => {
       speed: atributos(5),
     },
     moves: [
-      { name: nameMoves(3), lv:  levelMovies(3)},
+      { name: nameMoves(3),
+        lv:  levelMovies(3)},
     ]
   }
-
   };
 
 console.log(pokemon2(pkm));
