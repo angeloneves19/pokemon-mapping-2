@@ -15,11 +15,11 @@ const pokemon2 = (status) => {
     return resultadoFinalDoAtributo;
   };
 
-  //   const filtragemMovies = status.filter(
-  //     (filtro) =>
-  //       filtro.moves[0].version_group_details[0].version_group.name ===
-  //         "red-blue"
-  //   )
+     const filtragemMovies = status.filter(
+      (filtro) =>
+       filtro.moves[0].version_group_details[0].version_group.name ===
+          "red-blue"
+    )
 
   const nameMoves = (indexNome) => {
     const nome = filtragemMovies
@@ -53,20 +53,92 @@ const pokemon2 = (status) => {
       specialDefense: atributos(4),
       speed: atributos(5),
     },
-    moves: [{ name: nameMoves(3), lv: levelMovies(3) }],
+    moves: [{ name: nameMoves(3), lv: levelMovies(3) },
+            { name: nameMoves(3), lv: levelMovies(3) },
+            { name: nameMoves(3), lv: levelMovies(3) },
+            { name: nameMoves(3), lv: levelMovies(3) },
+            { name: nameMoves(3), lv: levelMovies(3) },
+            { name: nameMoves(3), lv: levelMovies(3) },
+            { name: nameMoves(3), lv: levelMovies(3) },
+            { name: nameMoves(3), lv: levelMovies(3) },
+    ]
   };
 };
 
 //console.log(pokemon2(pkm));
 //name
-const nick = pkm.map(a => a.moves.find(b => b.move.name == "growl"))
+const nick = pkm.map(a => a.moves.find(b => b.move.name.map(n => n.name)))
 console.log(nick.map(nome => nome.move.name).slice(1))
 
 
 //level
-const nome = pkm.map((a) => a.moves.find((b) => b.move.name == "growl"));
-const test = nome.map(lv => lv .version_group_details.find(c => c.version_group.name == "red-blue"))
-console.log(test.map(a => a.level_learned_at).slice(1).pop())
+const test = nick.map(lv => lv .version_group_details.find(c => c.version_group.name == "red-blue" && c.version_group.name !== "machine" && c.version_group.name !== "tutor"))
+//console.log(test.map(a => a.level_learned_at).slice(1).pop())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ function bubleSort () {
+  const numeros = [10, 200, 1, 2, 22, 11, 3, 5]
+  let tempororario
+  for (let i = 0; i < numeros.lengt; i++) {
+   for (let j = 0; j < numeros.length; index++) {
+    const element = array[index];
+    
+   }
+    
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//const nome = pkm.map((a) => a.moves.find((b) => b.move.name == "growl")); 
 
 // const moves = () => {
 // const nome = filtragemMovies.map((filtroName) => filtroName.moves[3].move.name).slice(1).pop();
