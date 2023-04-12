@@ -15,30 +15,6 @@ const pokemon2 = (status) => {
     return resultadoFinalDoAtributo;
   };
 
-     const filtragemMovies = status.filter(
-      (filtro) =>
-       filtro.moves[0].version_group_details[0].version_group.name ===
-          "red-blue"
-    )
-
-  const nameMoves = (indexNome) => {
-    const nome = filtragemMovies
-      .map((filtro) => filtro.moves[indexNome].move.name)
-      .slice(1)
-      .pop();
-    return nome;
-  };
-
-  const levelMovies = (indexLevel) => {
-    const numero = filtragemMovies
-      .map(
-        (filtro) =>
-          filtro.moves[indexLevel].version_group_details[0].level_learned_at
-      )
-      .slice()
-      .pop();
-    return numero;
-  };
 
   return {
     id: id[0],
@@ -66,13 +42,107 @@ const pokemon2 = (status) => {
 };
 
 //console.log(pokemon2(pkm));
+
+console.log(pkm.map(a => a.moves.map(b => b.move.name).filter(c => c.version_group_details == "red-blue" )))
+//console.log(pkm.map(a => a.moves.find(b => b.move)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //name
-const nick = pkm.map(a => a.moves.find(b => b.move.name.map(n => n.name)))
-console.log(nick.map(nome => nome.move.name).slice(1))
+const tests = (nome) =>{
+const nick = pkm.map(a => a.moves.find(b => b.move.name == nome))
+return nick.map(nome => nome.move.name).slice(1)
+}
+//console.log(tests("scratch"))
 
 
 //level
-const test = nick.map(lv => lv .version_group_details.find(c => c.version_group.name == "red-blue" && c.version_group.name !== "machine" && c.version_group.name !== "tutor"))
+const testsss = (nomeLevel) =>{
+  const nick = pkm.map(a => a.moves.find(b => b.move.name == nomeLevel))
+  const test = nick.map(lv => lv .version_group_details.find(c => c.version_group.name == "red-blue" && c.version_group.name !== "machine" && c.version_group.name !== "tutor"))
+  return test.map(a => a.level_learned_at).slice(1).pop()
+}
+
+//console.log(testsss("scratch"))
 //console.log(test.map(a => a.level_learned_at).slice(1).pop())
 
 
@@ -88,23 +158,6 @@ const test = nick.map(lv => lv .version_group_details.find(c => c.version_group.
 
 
 
-
-
-
-
-
-
- function bubleSort () {
-  const numeros = [10, 200, 1, 2, 22, 11, 3, 5]
-  let tempororario
-  for (let i = 0; i < numeros.lengt; i++) {
-   for (let j = 0; j < numeros.length; index++) {
-    const element = array[index];
-    
-   }
-    
-  }
-}
 
 
 
