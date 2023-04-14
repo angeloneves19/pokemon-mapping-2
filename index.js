@@ -15,7 +15,6 @@ const pokemon2 = (status) => {
     return resultadoFinalDoAtributo;
   };
 
-
   return {
     id: id[0],
     name: nome[0],
@@ -29,169 +28,60 @@ const pokemon2 = (status) => {
       specialDefense: atributos(4),
       speed: atributos(5),
     },
-    moves: [{ name: nameMoves(3), lv: levelMovies(3) },
-            { name: nameMoves(3), lv: levelMovies(3) },
-            { name: nameMoves(3), lv: levelMovies(3) },
-            { name: nameMoves(3), lv: levelMovies(3) },
-            { name: nameMoves(3), lv: levelMovies(3) },
-            { name: nameMoves(3), lv: levelMovies(3) },
-            { name: nameMoves(3), lv: levelMovies(3) },
-            { name: nameMoves(3), lv: levelMovies(3) },
-    ]
+    moves: [
+      { name: nameMoves(3), lv: levelMovies(3) },
+      { name: nameMoves(3), lv: levelMovies(3) },
+      { name: nameMoves(3), lv: levelMovies(3) },
+      { name: nameMoves(3), lv: levelMovies(3) },
+      { name: nameMoves(3), lv: levelMovies(3) },
+      { name: nameMoves(3), lv: levelMovies(3) },
+      { name: nameMoves(3), lv: levelMovies(3) },
+      { name: nameMoves(3), lv: levelMovies(3) },
+    ],
   };
 };
 
 //console.log(pokemon2(pkm));
 
-console.log(pkm.map(a => a.moves.map(b => b.move.name).filter(c => c.version_group_details == "red-blue" )))
+console.log(
+  pkm.map((a) =>
+    a.moves.map((b) =>
+      b.version_group_details
+        .map((a) => a.move_learn_method.name)
+        .filter((a) => a !== "machine" && a !== "tutor")
+    )
+  )
+);
 //console.log(pkm.map(a => a.moves.find(b => b.move)))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //name
-const tests = (nome) =>{
-const nick = pkm.map(a => a.moves.find(b => b.move.name == nome))
-return nick.map(nome => nome.move.name).slice(1)
-}
+const tests = (nome) => {
+  const nick = pkm.map((a) => a.moves.find((b) => b.move.name == nome));
+  return nick.map((nome) => nome.move.name).slice(1);
+};
 //console.log(tests("scratch"))
 
-
 //level
-const testsss = (nomeLevel) =>{
-  const nick = pkm.map(a => a.moves.find(b => b.move.name == nomeLevel))
-  const test = nick.map(lv => lv .version_group_details.find(c => c.version_group.name == "red-blue" && c.version_group.name !== "machine" && c.version_group.name !== "tutor"))
-  return test.map(a => a.level_learned_at).slice(1).pop()
-}
+const testsss = (nomeLevel) => {
+  const nick = pkm.map((a) => a.moves.find((b) => b.move.name == nomeLevel));
+  const test = nick.map((lv) =>
+    lv.version_group_details.find(
+      (c) =>
+        c.version_group.name == "red-blue" &&
+        c.version_group.name !== "machine" &&
+        c.version_group.name !== "tutor"
+    )
+  );
+  return test
+    .map((a) => a.level_learned_at)
+    .slice(1)
+    .pop();
+};
 
 //console.log(testsss("scratch"))
 //console.log(test.map(a => a.level_learned_at).slice(1).pop())
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//const nome = pkm.map((a) => a.moves.find((b) => b.move.name == "growl")); 
+//const nome = pkm.map((a) => a.moves.find((b) => b.move.name == "growl"));
 
 // const moves = () => {
 // const nome = filtragemMovies.map((filtroName) => filtroName.moves[3].move.name).slice(1).pop();
