@@ -43,7 +43,7 @@ const pokemon2 = (status) => {
 
 //console.log(pokemon2(pkm));
 
-console.log(
+const movesFiltrados =
   pkm.map((a) =>
     a.moves.map((b) =>
       b.version_group_details
@@ -51,15 +51,14 @@ console.log(
         .filter((a) => a !== "machine" && a !== "tutor")
     )
   )
-);
-//console.log(pkm.map(a => a.moves.find(b => b.move)))
+//console.log(movesFiltrados.map(a => a.version_group))
 
 //name
 const tests = (nome) => {
   const nick = pkm.map((a) => a.moves.find((b) => b.move.name == nome));
   return nick.map((nome) => nome.move.name).slice(1);
 };
-//console.log(tests("scratch"))
+// console.log(tests("scratch"))
 
 //level
 const testsss = (nomeLevel) => {
@@ -75,10 +74,9 @@ const testsss = (nomeLevel) => {
   return test
     .map((a) => a.level_learned_at)
     .slice(1)
-    .pop();
-};
-
-//console.log(testsss("scratch"))
+    .pop()
+}
+// console.log(testsss("scratch"))
 //console.log(test.map(a => a.level_learned_at).slice(1).pop())
 
 //const nome = pkm.map((a) => a.moves.find((b) => b.move.name == "growl"));
