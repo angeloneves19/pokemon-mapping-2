@@ -44,19 +44,43 @@ const pokemon2 = (status) => {
 //console.log(pokemon2(pkm));
 
 let versaoRedBlue = pkm.map(test => test.moves.map(a => a.version_group_details.find(a => a.version_group.name == "red-blue" && a.move_learn_method.name !== "machine" && a.move_learn_method.name !== "tutor")))
-console.log(versaoRedBlue.map(tre => tre.map(a => a.move_learn_method.name)))
+console.log(versaoRedBlue.map(tre => tre))
 
-//let movesReadBlue = pkm.map(a => a.moves.map(a => a.move.name))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //console.log(movesReadBlue)
-const movesFiltrados =
-  pkm.map((a) =>
-    a.moves.map((b) =>
-      b.version_group_details
-        .map((a) => a.move_learn_method.name)
-        .filter((a) => a !== "machine" && a !== "tutor")
-    )
-  )
+// const movesFiltrados =
+//   pkm.map((a) =>
+//     a.moves.map((b) =>
+//       b.version_group_details
+//         .map((a) => a.move_learn_method.name)
+//         .filter((a) => a !== "machine" && a !== "tutor")
+//     )
+//   )
 //console.log(movesFiltrados.map(a => a.version_group))
 
 
