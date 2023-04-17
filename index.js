@@ -43,6 +43,9 @@ const pokemon2 = (status) => {
 
 //console.log(pokemon2(pkm));
 
+let movesReadBlue = pkm.map(a => a.moves.map(a => a.version_group_details.map(a => a.version_group.name.map(a =>a == "red-blue"))))
+
+console.log(movesReadBlue)
 const movesFiltrados =
   pkm.map((a) =>
     a.moves.map((b) =>
