@@ -43,20 +43,49 @@ const pokemon2 = (status) => {
 
 //console.log(pokemon2(pkm));
 
+<<<<<<< HEAD
 let versaoReadBlue = pkm.map(test => test.moves.map(a => a.version_group_details.find(a => a.version_group.name == "red-blue" && a.move_learn_method.name !== "machine" && a.move_learn_method.name !== "tutor")))
 console.log(versaoReadBlue.map(tre => tre.map(a => a)))
+=======
+let versaoRedBlue = pkm.map(test => test.moves.map(a => a.version_group_details.find(a => a.version_group.name == "red-blue" && a.move_learn_method.name !== "machine" && a.move_learn_method.name !== "tutor")))
+console.log(versaoRedBlue.map(tre => tre))
 
-//let movesReadBlue = pkm.map(a => a.moves.map(a => a.move.name))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 918319b84d23e269dd22d4cb54c77cf9175bd5c6
+
 
 //console.log(movesReadBlue)
-const movesFiltrados =
-  pkm.map((a) =>
-    a.moves.map((b) =>
-      b.version_group_details
-        .map((a) => a.move_learn_method.name)
-        .filter((a) => a !== "machine" && a !== "tutor")
-    )
-  )
+// const movesFiltrados =
+//   pkm.map((a) =>
+//     a.moves.map((b) =>
+//       b.version_group_details
+//         .map((a) => a.move_learn_method.name)
+//         .filter((a) => a !== "machine" && a !== "tutor")
+//     )
+//   )
 //console.log(movesFiltrados.map(a => a.version_group))
 
 
